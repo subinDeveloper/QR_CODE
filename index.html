@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Genarate QR Code</title>
+</head>
+<body class="bg-blue-400 ">
+   <div class="items-center h-screen justify-center flex ">
+   
+<div class="flex flex-col gap-6 bg-white text-black px-16 p-8 rounded-lg">
+    <h3 class="text-2xl font-semibold">Enter your text or URL</h3>
+   
+    <input type="text" placeholder="Enter the Nots" class="border text-start border-black px-28 py-3" id="qrText">
+    <div id="imgBox" class="flex justify-center" >
+        <img src="" class="min-h-30 border border-black flex justify-center" id="qrImage">
+    </div>
+<div class="">
+    <button onclick="genaretQr()" class=" bg-gray-400 px-8 font-semibold">Genarate QR code</button>
+ 
+</div>
+<script>
+    let  imgBox = document.getElementById("imgBox")
+let qrImage = document.getElementById("qrImage")
+let qrText = document.getElementById("qrText")
+let btn = document.getElementById("btn")
+    function genaretQr(){
+        if(qrText.value.length > 0 ){
+            qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrText.value;
+        }else{
+            
+        }
+
+    }
+
+</script>
+</div>
+    </div>
+  
+   
+</body>
+</html>
